@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>[YOUR_WEBSITE_NAME] | Official WhatsApp & Cyber Security Advisory</title>
+  <meta name="description" content="Comprehensive security guide, vulnerability assessment, and emergency recovery assistance to protect your WhatsApp account from cyber fraud and unauthorized access." />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon Placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23059669'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>" />
+</head>
+
+<body class="font-en">
+
+  <!-- =========================================================================
+       STICKY / FIXED HEADER & NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo Container -->
+      <a href="#home" class="brand-wrapper" title="Hafiz Talha Attari">
+        <div class="brand-logo-container">
+          <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" />
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="#whatsapp-channel" class="nav-link" data-i18n="nav.channel">WhatsApp Channel</a>
+        <a href="#measures" class="nav-link" data-i18n="nav.securityMeasures">12 Security Steps</a>
+        <a href="#checker" class="nav-link" data-i18n="nav.securityChecker">Security Checker</a>
+        <a href="#recovery" class="nav-link" data-i18n="nav.recoveryWizard">Account Recovery</a>
+        <a href="#guide" class="nav-link" data-i18n="nav.guide">Guide</a>
+        <a href="#pdf-guide" class="nav-link" data-i18n="nav.pdfGuide">PDF Guide</a>
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <!-- Header Actions (Language Switcher, Contact Button, Report Button, Mobile Toggle) -->
+      <div class="header-actions">
+        
+        <!-- Emergency Phone Quick Contact -->
+        <a href="tel:03126571673" class="btn btn-outline btn-sm desktop-only-btn cfg-phone-link" title="Call Emergency Support">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span class="cfg-phone">03126571673</span>
+        </a>
+
+        <!-- Language Switcher Selector (English, Urdu, Arabic) -->
+        <div class="lang-selector-wrap">
+          <button id="langBtn" class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" x2="22" y1="12" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span id="langBtnLabel">اردو</span>
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          
+          <div id="langDropdown" class="lang-dropdown-menu">
+            <button class="lang-option" data-lang="en" type="button">
+              <span>English</span>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">LTR</small>
+            </button>
+            <button class="lang-option active" data-lang="ur" type="button">
+              <span>اردو (Urdu)</span>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">RTL</small>
+            </button>
+            <button class="lang-option" data-lang="ar" type="button">
+              <span>العربية (Arabic)</span>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">RTL</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Primary Header Action Button -->
+        <button class="btn btn-primary btn-sm desktop-only-btn open-report-modal" type="button">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <line x1="12" x2="12" y1="9" y2="13"></line>
+            <line x1="12" x2="12.01" y1="17" y2="17"></line>
+          </svg>
+          <span data-i18n="nav.reportIncident">Report Threat</span>
+        </button>
+
+        <!-- Mobile Drawer Hamburger Toggle -->
+        <button id="mobileToggle" class="mobile-nav-toggle" type="button" aria-label="Toggle navigation drawer">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MOBILE NAVIGATION SLIDING DRAWER
+       ========================================================================= -->
+  <div id="drawerOverlay" class="mobile-drawer-overlay"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <div class="brand-wrapper">
+        <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" style="height: 38px;" />
+      </div>
+      <button id="drawerClose" class="drawer-close-btn" type="button" aria-label="Close menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="#home" class="mobile-nav-link active" data-i18n="nav.home">Home</a>
+      <a href="#whatsapp-channel" class="mobile-nav-link" data-i18n="nav.channel">WhatsApp Channel</a>
+      <a href="#measures" class="mobile-nav-link" data-i18n="nav.securityMeasures">12 Security Steps</a>
+      <a href="#checker" class="mobile-nav-link" data-i18n="nav.securityChecker">Security Checker</a>
+      <a href="#recovery" class="mobile-nav-link" data-i18n="nav.recoveryWizard">Account Recovery</a>
+      <a href="#guide" class="mobile-nav-link" data-i18n="nav.guide">Guide</a>
+      <a href="#pdf-guide" class="mobile-nav-link" data-i18n="nav.pdfGuide">PDF Guide</a>
+      <a href="#faq" class="mobile-nav-link" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="tel:03126571673" class="btn btn-primary cfg-phone-link" style="text-align: center;">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span class="cfg-phone">03126571673</span>
+      </a>
+      <a href="mailto:hafiztalharazaattari@gmail.com" class="btn btn-outline cfg-email-link" style="text-align: center; font-size: 0.85rem;">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span class="cfg-email">hafiztalharazaattari@gmail.com</span>
+      </a>
+      <button class="btn btn-secondary open-report-modal" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+          <line x1="12" x2="12" y1="9" y2="13"></line>
+        </svg>
+        <span data-i18n="nav.reportIncident">Report Threat</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       HERO BANNER SECTION
+       ========================================================================= -->
+  <section id="home" class="hero-section">
+    <div class="container hero-grid">
+      
+      <!-- Hero Text Column -->
+      <div class="hero-text-content">
+        <div class="hero-badge-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span data-i18n="hero.badge">Official WhatsApp Cyber Security Advisory</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="hero.title">
+          Protect Your WhatsApp from Hacking & Cyber Fraud
+        </h1>
+
+        <p class="hero-description" data-i18n="hero.description">
+          Comprehensive multi-tier protection guidelines, instant security health checkup, and rapid recovery assistance to safeguard your identity, personal chats, and privacy.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#checker" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span data-i18n="hero.btnCheckSecurity">Run Security Check</span>
+          </a>
+
+          <a href="#recovery" class="btn btn-secondary btn-lg">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span data-i18n="hero.btnRecoveryGuide">Recover Compromised Account</span>
+          </a>
+
+          <a href="assets/WhatsApp-Security-Guide.pdf" download="WhatsApp-Security-Guide.pdf" class="btn btn-primary btn-lg cfg-pdf-link" style="background: #047857; border-color: #047857;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" x2="12" y1="15" y2="3"></line>
+            </svg>
+            <span data-i18n="hero.btnDownloadPdf">Download PDF Guide</span>
+          </a>
+
+          <a href="#guide" class="btn btn-outline btn-lg">
+            <span data-i18n="hero.btnViewGuide">Browse Full Guide</span>
+          </a>
+        </div>
+
+        <!-- Trust Stats Badges -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span data-i18n="hero.statUsers">100K+ Users Protected</span>
+          </div>
+          <div class="stat-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <span data-i18n="hero.statMeasures">12 Core Defense Measures</span>
+          </div>
+          <div class="stat-item">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            <span data-i18n="hero.statAdvisory">24/7 Threat Assistance</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Cyber Graphic / Visual Shield Illustration -->
+      <div class="hero-graphic-wrap">
+        <div class="shield-graphic-card">
+          <div class="shield-center-icon">
+            <svg width="54" height="54" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M12 8v4"></path>
+              <path d="M12 16h.01"></path>
+            </svg>
+          </div>
+
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.5rem;">
+            End-to-End Account Defense
+          </h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Continuous hardening against credential stuffing, phishing bots, and social engineering attacks.
+          </p>
+
+          <div style="background: var(--bg-card-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); font-size: 0.82rem; font-weight: 600; color: var(--primary);">
+            256-Bit Cryptographic Signal Protection
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-security-badge badge-top-right">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>2FA Verified</span>
+          </div>
+          <div class="floating-security-badge badge-bottom-left">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+            <span>Anti-Phishing Active</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CRITICAL SECURITY WARNING BANNER (GOLDEN RULE #1)
+       ========================================================================= -->
+  <section class="warning-banner-section">
+    <div class="container">
+      <div class="warning-banner-card">
+        <div class="warning-icon-box">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <line x1="12" x2="12" y1="9" y2="13"></line>
+            <line x1="12" x2="12.01" y1="17" y2="17"></line>
+          </svg>
+        </div>
+        <div class="warning-content">
+          <div class="warning-headline-wrap">
+            <h4 class="warning-title" data-i18n="warningBanner.title">CRITICAL SECURITY WARNING</h4>
+            <span class="warning-rule-badge" data-i18n="warningBanner.ruleBadge">Golden Rule #1</span>
+          </div>
+          <p class="warning-text" data-i18n="warningBanner.message">
+            Never share your 6-digit WhatsApp registration code or Two-Step Verification PIN with ANYONE, even if they claim to be WhatsApp Support, friends, family, or official administrators.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       OFFICIAL WHATSAPP CHANNEL SECTION
+       ========================================================================= -->
+  <section id="whatsapp-channel" class="whatsapp-channel-section">
+    <div class="container">
+      <div class="whatsapp-channel-card">
+        <div class="channel-icon-bubble">
+          <!-- WhatsApp Vector Icon -->
+          <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </div>
+        <div class="channel-info-wrap">
+          <span class="channel-badge" data-i18n="whatsappChannel.badge">آفیشل معلوماتی چینل</span>
+          <h3 class="channel-title" data-i18n="whatsappChannel.title">راہِ عــلم راہِ جــنت 📖🔏</h3>
+          <p class="channel-invitation-text" data-i18n="whatsappChannel.invitation">
+            📲 علمِ دین کا انمول خزانہ حاصل کرنے اور خوبصورت تحریرات پڑھنے کے لیے یہ چینل فالو کر لیجیے۔ 👇🏻
+          </p>
+        </div>
+        <a href="https://whatsapp.com/channel/0029VazXk2Y59PwRQcj4pZ2I" target="_blank" rel="noopener noreferrer" class="btn-channel cfg-whatsapp-channel-link">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span data-i18n="whatsappChannel.btnFollow">واٹس ایپ چینل فالو کریں</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12 ESSENTIAL SECURITY MEASURES GRID
+       ========================================================================= -->
+  <section id="measures" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="measuresSection.badge">Essential Safeguards</span>
+        <h2 class="section-title" data-i18n="measuresSection.title">12 Essential Measures to Secure WhatsApp</h2>
+        <p class="section-subtitle" data-i18n="measuresSection.subtitle">
+          Implement these verified cybersecurity practices immediately to build an unbreakable wall around your messaging account.
+        </p>
+      </div>
+
+      <!-- 12 Cards Grid rendered dynamically via JS -->
+      <div id="measuresGrid" class="measures-grid"></div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE SECURITY HEALTH CHECKER
+       ========================================================================= -->
+  <section id="checker" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="checkerSection.badge">Interactive Diagnostic Tool</span>
+        <h2 class="section-title" data-i18n="checkerSection.title">Interactive WhatsApp Security Health Checker</h2>
+        <p class="section-subtitle" data-i18n="checkerSection.subtitle">
+          Answer 5 quick questions to calculate your vulnerability risk score and receive personalized hardening recommendations.
+        </p>
+      </div>
+
+      <div class="checker-wrapper" id="checkerContainer">
+        <!-- Rendered dynamically via JS for full trilingual reactive state -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       COMPROMISED ACCOUNT RAPID RECOVERY WIZARD
+       ========================================================================= -->
+  <section id="recovery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="recoverySection.badge">Emergency Response</span>
+        <h2 class="section-title" data-i18n="recoverySection.title">Compromised Account Rapid Recovery Assistant</h2>
+        <p class="section-subtitle" data-i18n="recoverySection.subtitle">
+          Follow this diagnostic wizard immediately if you suspect unauthorized access or have been logged out.
+        </p>
+      </div>
+
+      <div class="recovery-grid">
+        <!-- Scenarios list -->
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; color: var(--secondary);">
+            Identify Your Incident Scenario:
+          </h3>
+          <div id="scenariosList" class="scenarios-card-list">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Recovery Steps Display -->
+        <div class="recovery-steps-display">
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--secondary);">
+            Immediate Action Checklist:
+          </h3>
+          <div id="recoveryStepsList">
+            <!-- Populated dynamically via JS -->
+          </div>
+
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;">
+            <button id="btnDraftEmail" class="btn btn-primary" type="button">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span data-i18n="recoverySection.btnDraftEmail">Generate Support Email Template</span>
+            </button>
+            <button class="btn btn-danger open-report-modal" type="button">
+              <span data-i18n="nav.reportIncident">Report Threat</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DEDICATED GUIDE SECTION (CONTAINING MANDATORY PLACEHOLDER)
+       ========================================================================= -->
+  <section id="guide" class="section section-alt guide-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="guideSection.badge">Knowledge Base</span>
+        <h2 class="section-title" data-i18n="guideSection.title">Dedicated Cyber Security Guide</h2>
+        <p class="section-subtitle" data-i18n="guideSection.subtitle">
+          In-depth instructional repository, architecture diagrams, and preventative workflows for complete digital safety.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="guide-tabs">
+        <button class="guide-tab-btn active" data-category="all" data-i18n="guideSection.tabAll">All Topics</button>
+        <button class="guide-tab-btn" data-category="account" data-i18n="guideSection.tabAccount">Account Hardening</button>
+        <button class="guide-tab-btn" data-category="recovery" data-i18n="guideSection.tabRecovery">Emergency Recovery</button>
+        <button class="guide-tab-btn" data-category="scams" data-i18n="guideSection.tabScams">Scam Awareness</button>
+        <button class="guide-tab-btn" data-category="privacy" data-i18n="guideSection.tabPrivacy">Privacy Blueprint</button>
+      </div>
+
+      <!-- ===================================================================
+           MANDATORY DEDICATED GUIDE SECTION CONTAINER & PDF SHOWCASE
+           =================================================================== -->
+      <div class="guide-placeholder-container">
+        
+        <!-- Official PDF Guide Showcase Card -->
+        <div id="pdf-guide" class="pdf-showcase-card">
+          <div class="pdf-thumb-box">
+            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" x2="8" y1="13" y2="13"></line>
+              <line x1="16" x2="8" y1="17" y2="17"></line>
+            </svg>
+            <span class="pdf-thumb-tag">PDF</span>
+          </div>
+          <div class="pdf-details-box">
+            <h3 data-i18n="pdfGuideSection.title">واٹس ایپ سیکیورٹی گائیڈ پی ڈی ایف (ورژن 1.0)</h3>
+            <p data-i18n="pdfGuideSection.desc">
+              اینڈرائیڈ اور آئی فون کے لیے 12 بنیادی سیکیورٹی موضوعات پر تصویری، عملی اور قدم بہ قدم جامع رہنمائی۔
+            </p>
+            <div class="pdf-meta-pills">
+              <span class="pdf-meta-pill" data-i18n="pdfGuideSection.pagesBadge">23 صفحات</span>
+              <span class="pdf-meta-pill" data-i18n="pdfGuideSection.versionBadge">ورژن 1.0 (مئی 2026)</span>
+              <span class="pdf-meta-pill" data-i18n="pdfGuideSection.compatibilityBadge">اینڈرائیڈ اور آئی فون</span>
+            </div>
+          </div>
+          <div class="pdf-actions-box">
+            <a href="assets/WhatsApp-Security-Guide.pdf" download="WhatsApp-Security-Guide.pdf" class="btn btn-primary cfg-pdf-link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" x2="12" y1="15" y2="3"></line>
+              </svg>
+              <span data-i18n="pdfGuideSection.btnDownload">پی ڈی ایف گائیڈ ڈاؤن لوڈ کریں</span>
+            </a>
+            <a href="assets/WhatsApp-Security-Guide.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cfg-pdf-link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span data-i18n="pdfGuideSection.btnOpen">آن لائن پی ڈی ایف پڑھیں</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="guide-placeholder-header">
+          <div class="guide-placeholder-tag-label">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span>[GUIDE_SECTION_CONTENT_PLACEHOLDER]</span>
+          </div>
+
+          <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
+            <span data-i18n="guideSection.placeholderLabel">Dedicated Guide Content Container</span>
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem;" data-i18n="guideSection.placeholderDescription">
+          This pre-styled container is ready for dynamic guide content, markdown tutorials, or educational media insertion.
+        </p>
+
+        <!-- Pre-styled Guide Cards Grid Ready For Insertion -->
+        <div class="guide-cards-grid">
+          
+          <!-- Guide Article Card 1 -->
+          <article class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                <path d="M7 7h.01"></path>
+                <path d="M17 7h.01"></path>
+                <path d="M7 17h.01"></path>
+                <path d="M17 17h.01"></path>
+              </svg>
+            </div>
+            <h3 data-i18n="guideSection.guideCard1Title">Understanding QR Code Hijacking (Ghost Sessions)</h3>
+            <p data-i18n="guideSection.guideCard1Desc">
+              How attackers exploit public Wi-Fi and counterfeit login pages to mirror your WhatsApp chats on unapproved web sessions.
+            </p>
+            <div class="guide-card-footer">
+              <span data-i18n="guideSection.btnReadMore">Read Complete Documentation</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </div>
+          </article>
+
+          <!-- Guide Article Card 2 -->
+          <article class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" x2="19" y1="8" y2="14"></line>
+                <line x1="22" x2="16" y1="11" y2="11"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="guideSection.guideCard2Title">Impersonation Scams & Fraudulent Support Agents</h3>
+            <p data-i18n="guideSection.guideCard2Desc">
+              Dissecting real-world social engineering cases where attackers masquerade as security executives or family members in crisis.
+            </p>
+            <div class="guide-card-footer">
+              <span data-i18n="guideSection.btnReadMore">Read Complete Documentation</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </div>
+          </article>
+
+          <!-- Guide Article Card 3 -->
+          <article class="guide-card">
+            <div class="guide-card-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" x2="8" y1="13" y2="13"></line>
+                <line x1="16" x2="8" y1="17" y2="17"></line>
+              </svg>
+            </div>
+            <h3 data-i18n="guideSection.guideCard3Title">The Comprehensive Digital Hygiene Checklist</h3>
+            <p data-i18n="guideSection.guideCard3Desc">
+              A complete 15-minute routine to audit all connected accounts, cloud archives, and permission authorizations.
+            </p>
+            <div class="guide-card-footer">
+              <span data-i18n="guideSection.btnReadMore">Read Complete Documentation</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ) ACCORDION
+       ========================================================================= -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="faqSection.badge">Frequently Asked Questions</span>
+        <h2 class="section-title" data-i18n="faqSection.title">Security & Protection FAQ</h2>
+        <p class="section-subtitle" data-i18n="faqSection.subtitle">
+          Clear answers to the most common questions regarding account safety, recovery protocols, and prevention.
+        </p>
+      </div>
+
+      <!-- Accordion rendered dynamically via JS -->
+      <div id="faqList" class="faq-accordion-list"></div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       REPORT INCIDENT MODAL POPUP
+       ========================================================================= -->
+  <div id="reportModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button id="modalCloseBtn" class="modal-close-btn" type="button" aria-label="Close modal">&times;</button>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <h3 id="modalTitle" style="font-size: 1.35rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.35rem;" data-i18n="reportModal.title">
+          Report Cyber Threat or Incident
+        </h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="reportModal.subtitle">
+          Submit details of suspicious numbers, phishing links, or compromised accounts for advisory analysis.
+        </p>
+      </div>
+
+      <form id="reportForm">
+        <div class="form-group">
+          <label class="form-label" data-i18n="reportModal.labelCategory">Incident Category</label>
+          <select class="form-control" required>
+            <option value="impersonation" data-i18n="reportModal.optImpersonation">Impersonation / Fake Support</option>
+            <option value="otp_theft" data-i18n="reportModal.optOtpTheft">OTP / Code Theft Attempt</option>
+            <option value="link" data-i18n="reportModal.optMaliciousLink">Phishing Link / Scam Promo</option>
+            <option value="compromised" data-i18n="reportModal.optCompromised">Account Already Compromised</option>
+            <option value="other" data-i18n="reportModal.optOther">Other Cyber Threat</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-i18n="reportModal.labelPhone">Target Phone Number</label>
+          <input type="tel" class="form-control" required placeholder="+1 234 567 8900" data-i18n-placeholder="reportModal.placeholderPhone" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-i18n="reportModal.labelSuspect">Suspect's Number or Link</label>
+          <input type="text" class="form-control" placeholder="+.. or https://..." data-i18n-placeholder="reportModal.placeholderSuspect" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-i18n="reportModal.labelDescription">Description of Incident</label>
+          <textarea class="form-control" required rows="3" placeholder="Describe what happened..." data-i18n-placeholder="reportModal.placeholderDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" data-i18n="reportModal.labelEvidence">Evidence (Screenshot / Log)</label>
+          <input type="file" class="form-control" style="padding: 0.45rem;" />
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.75rem;">
+          <button id="modalCancelBtn" class="btn btn-outline" type="button" data-i18n="reportModal.btnCancel">Close Window</button>
+          <button class="btn btn-primary" type="submit" data-i18n="reportModal.btnSubmit">Submit Incident Report</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER SECTION (UPDATED WITH OFFICIAL DETAILS)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & About -->
+        <div class="footer-col">
+          <div class="brand-wrapper" style="margin-bottom: 1.25rem;">
+            <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="footer-logo-img cfg-logo-img" />
+          </div>
+          
+          <p data-i18n="footer.aboutText">
+            ایک خود مختار، عوامی سائبر سیکیورٹی آگاہی پلیٹ فارم جو شہریوں کو آن لائن فراڈ، اکاؤنٹ ہیکنگ اور ڈیٹا چوری سے بچانے کے لیے وقف ہے۔
+          </p>
+
+          <div style="margin-top: 1rem;">
+            <a href="https://whatsapp.com/channel/0029VazXk2Y59PwRQcj4pZ2I" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm cfg-whatsapp-channel-link">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <span>راہِ عــلم راہِ جــنت</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 data-i18n="footer.quickLinksTitle">Quick Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="#whatsapp-channel" class="footer-link" data-i18n="nav.channel">WhatsApp Channel</a></li>
+            <li><a href="#measures" class="footer-link" data-i18n="nav.securityMeasures">12 Security Steps</a></li>
+            <li><a href="#checker" class="footer-link" data-i18n="nav.securityChecker">Security Checker</a></li>
+            <li><a href="#recovery" class="footer-link" data-i18n="nav.recoveryWizard">Account Recovery</a></li>
+            <li><a href="#guide" class="footer-link" data-i18n="nav.guide">Guide</a></li>
+            <li><a href="#pdf-guide" class="footer-link" data-i18n="nav.pdfGuide">PDF Guide</a></li>
+            <li><a href="#faq" class="footer-link" data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Security Tools -->
+        <div class="footer-col">
+          <h4 data-i18n="footer.toolsTitle">Security Tools</h4>
+          <ul class="footer-links-list">
+            <li><a href="assets/WhatsApp-Security-Guide.pdf" download="WhatsApp-Security-Guide.pdf" class="footer-link cfg-pdf-link" data-i18n="pdfGuideSection.btnDownload">پی ڈی ایف گائیڈ ڈاؤن لوڈ کریں</a></li>
+            <li><a href="assets/WhatsApp-Security-Guide.pdf" target="_blank" rel="noopener noreferrer" class="footer-link cfg-pdf-link" data-i18n="pdfGuideSection.btnOpen">آن لائن پی ڈی ایف پڑھیں</a></li>
+            <li><a href="#checker" class="footer-link" data-i18n="hero.btnCheckSecurity">Run Security Check</a></li>
+            <li><a href="#recovery" class="footer-link" data-i18n="hero.btnRecoveryGuide">Recover Compromised Account</a></li>
+            <li><a href="javascript:void(0)" class="footer-link open-report-modal" data-i18n="nav.reportIncident">Report Threat</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VazXk2Y59PwRQcj4pZ2I" target="_blank" rel="noopener noreferrer" class="footer-link cfg-whatsapp-channel-link">واٹس ایپ چینل فالو کریں</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Social Info -->
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Incident Advisory Contact</h4>
+          
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:03126571673" class="cfg-phone-link" style="color: #ffffff; font-weight: 700;">
+              <span class="cfg-phone">03126571673</span>
+            </a>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:hafiztalharazaattari@gmail.com" class="cfg-email-link" style="color: #ffffff;">
+              <span class="cfg-email">hafiztalharazaattari@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <a href="https://whatsapp.com/channel/0029VazXk2Y59PwRQcj4pZ2I" target="_blank" rel="noopener noreferrer" class="cfg-whatsapp-channel-link" style="color: var(--accent-emerald); font-weight: 700;">
+              راہِ عــلم راہِ جــنت 📖🔏
+            </a>
+          </div>
+
+          <!-- Social Media Grid matching the logo -->
+          <div style="margin-top: 1.25rem;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;" data-i18n="footer.socialTitle">
+              Follow Security & Knowledge Updates:
+            </div>
+            <div class="footer-social-links">
+              <!-- WhatsApp Channel -->
+              <a href="https://whatsapp.com/channel/0029VazXk2Y59PwRQcj4pZ2I" target="_blank" rel="noopener noreferrer" class="social-btn cfg-whatsapp-channel-link" style="background: #059669;" aria-label="WhatsApp Channel" title="WhatsApp Channel">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn cfg-social-fb" style="background: #1877f2;" aria-label="Facebook" title="Facebook">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn cfg-social-ig" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);" aria-label="Instagram" title="Instagram">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+              </a>
+              <!-- YouTube -->
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn cfg-social-yt" style="background: #ff0000;" aria-label="YouTube" title="YouTube">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Disclaimer -->
+      <div class="footer-bottom">
+        <div>
+          <p>&copy; 2026 <span class="cfg-website-name">Hafiz Talha Attari</span>. <span data-i18n="footer.rightsText">All Rights Reserved. Provided for educational and public defense purposes.</span></p>
+        </div>
+        <div class="footer-disclaimer" data-i18n="footer.disclaimer">
+          Disclaimer: This platform operates independently to promote digital privacy and account defense. WhatsApp is a registered trademark of Meta Platforms, Inc.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Central Configuration & Translations Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
