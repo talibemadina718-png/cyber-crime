@@ -53,7 +53,7 @@
   function init() {
     // 1. Load saved language or default from config
     const savedLang = localStorage.getItem("site_lang");
-    if (savedLang && (savedLang === "en" || savedLang === "ur" || savedLang === "ar")) {
+    if (savedLang && (savedLang === "en" || savedLang === "ur" || savedLang === "roman")) {
       currentLang = savedLang;
     } else if (window.SITE_CONFIG && window.SITE_CONFIG.settings.defaultLanguage) {
       currentLang = window.SITE_CONFIG.settings.defaultLanguage;
@@ -147,14 +147,14 @@
     const langLabels = {
       en: "English",
       ur: "اردو",
-      ar: "العربية",
+      roman: "Roman Urdu",
     };
     if (elements.langBtnLabel) {
       elements.langBtnLabel.textContent = langLabels[lang] || "Language";
     }
 
-    // Update active state in dropdown
-    elements.langOptions.forEach(opt => {
+    // Update active state in desktop & mobile dropdowns
+    document.querySelectorAll(".lang-option, .mobile-lang-chip").forEach(opt => {
       if (opt.getAttribute("data-lang") === lang) {
         opt.classList.add("active");
       } else {
@@ -541,11 +541,11 @@
     const t = window.TRANSLATIONS[currentLang];
     const userPhonePrompt = prompt(
       currentLang === "ur"
-        ? "براہ کرم اپنا مکمل فون نمبر بین الاقوامی کوڈ کے ساتھ درج کریں (مثلاً +923001234567):"
-        : currentLang === "ar"
-        ? "يرجى إدخال رقم هاتفك بالصيغة الدولية الكاملة (مثال: +966501234567):"
-        : "Please enter your full phone number in international format (e.g. +12345678900):",
-      "+1 234 567 8900"
+        ? "براہ کرم اپنا مکمل فون نمبر بین الاقوامی کوڈ کے ساتھ درج کریں (مثلاً +923126571673):"
+        : currentLang === "roman"
+        ? "Bara-e-karam apna mukammal phone number international code ke sath darj karain (maslan +923126571673):"
+        : "Please enter your full phone number in international format (e.g. +923126571673):",
+      "+92 312 6571673"
     );
 
     if (!userPhonePrompt) return;
@@ -557,7 +557,13 @@
 
     const mailtoLink = `mailto:support@whatsapp.com?subject=${emailSubject}&body=${emailBody}`;
     window.open(mailtoLink, "_blank");
-    showToast(currentLang === "ur" ? "ای میل کلائنٹ کھول دیا گیا ہے!" : "Email client opened with pre-filled support message!");
+    showToast(
+      currentLang === "ur"
+        ? "ای میل کلائنٹ کھول دیا گیا ہے!"
+        : currentLang === "roman"
+        ? "Email client support message ke sath khol diya gaya hai!"
+        : "Email client opened with pre-filled support message!"
+    );
   }
 
   /**
@@ -596,16 +602,7 @@
       });
     }
 
-    // 2. Language Selection
-    elements.langOptions.forEach(opt => {
-      opt.addEventListener("click", function () {
-        const selectedLang = this.getAttribute("data-lang");
-        setLanguage(selectedLang);
-        if (elements.langDropdown) elements.langDropdown.classList.remove("show");
-      });
-    });
-
-    // 3. Mobile Navigation Drawer Toggle
+    // 2. Mobile Navigation Drawer Toggle Function
     const toggleDrawer = open => {
       if (!elements.mobileDrawer || !elements.drawerOverlay) return;
       if (open) {
@@ -618,6 +615,18 @@
         document.body.style.overflow = "";
       }
     };
+
+    // 3. Language Selection (Desktop Dropdown & Mobile Drawer Chips)
+    document.querySelectorAll(".lang-option, .mobile-lang-chip").forEach(opt => {
+      opt.addEventListener("click", function () {
+        const selectedLang = this.getAttribute("data-lang");
+        if (selectedLang) {
+          setLanguage(selectedLang);
+          if (elements.langDropdown) elements.langDropdown.classList.remove("show");
+          toggleDrawer(false);
+        }
+      });
+    });
 
     if (elements.mobileToggle) {
       elements.mobileToggle.addEventListener("click", () => toggleDrawer(true));

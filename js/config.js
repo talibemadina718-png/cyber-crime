@@ -55,7 +55,7 @@ const SITE_CONFIG = {
 
   // Application Defaults
   settings: {
-    defaultLanguage: "ur", // Defaulting to Urdu as preferred by the user, while supporting English and Arabic fully
+    defaultLanguage: "ur", // Supported languages: 'en' (English), 'ur' (Urdu), 'roman' (Roman Urdu)
     enableSoundEffects: false,
     enableThemeToggle: true,
   }

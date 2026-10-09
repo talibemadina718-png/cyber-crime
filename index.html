@@ -29,7 +29,7 @@
       <!-- Brand Logo Container -->
       <a href="#home" class="brand-wrapper" title="Hafiz Talha Attari">
         <div class="brand-logo-container">
-          <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" />
+          <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" width="180" height="48" fetchpriority="high" />
         </div>
       </a>
 
@@ -54,7 +54,7 @@
           <span class="cfg-phone">03126571673</span>
         </a>
 
-        <!-- Language Switcher Selector (English, Urdu, Arabic) -->
+        <!-- Language Switcher Selector (English, Urdu, Roman Urdu) -->
         <div class="lang-selector-wrap">
           <button id="langBtn" class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Change Language">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -75,9 +75,9 @@
               <span>اردو (Urdu)</span>
               <small style="color: var(--text-muted); font-size: 0.75rem;">RTL</small>
             </button>
-            <button class="lang-option" data-lang="ar" type="button">
-              <span>العربية (Arabic)</span>
-              <small style="color: var(--text-muted); font-size: 0.75rem;">RTL</small>
+            <button class="lang-option" data-lang="roman" type="button">
+              <span>Roman Urdu</span>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">LTR</small>
             </button>
           </div>
         </div>
@@ -112,9 +112,18 @@
   <aside id="mobileDrawer" class="mobile-drawer" aria-label="Mobile Navigation Menu">
     <div class="drawer-header">
       <div class="brand-wrapper">
-        <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" style="height: 38px;" />
+        <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="brand-logo-img cfg-logo-img" width="140" height="38" loading="lazy" style="height: 38px;" />
       </div>
       <button id="drawerClose" class="drawer-close-btn" type="button" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Mobile Drawer Language Selector -->
+    <div class="mobile-lang-switcher" aria-label="Language Selector">
+      <div class="mobile-lang-chips">
+        <button type="button" class="mobile-lang-chip" data-lang="en">English</button>
+        <button type="button" class="mobile-lang-chip active" data-lang="ur">اردو</button>
+        <button type="button" class="mobile-lang-chip" data-lang="roman">Roman Urdu</button>
+      </div>
     </div>
 
     <nav class="mobile-nav-links">
@@ -202,15 +211,15 @@
 
         <!-- Trust Stats Badges -->
         <div class="hero-stats">
-          <div class="stat-item">
+          <div class="stat-item tabular-nums">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             <span data-i18n="hero.statUsers">100K+ Users Protected</span>
           </div>
-          <div class="stat-item">
+          <div class="stat-item tabular-nums">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
             <span data-i18n="hero.statMeasures">12 Core Defense Measures</span>
           </div>
-          <div class="stat-item">
+          <div class="stat-item tabular-nums">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
             <span data-i18n="hero.statAdvisory">24/7 Threat Assistance</span>
           </div>
@@ -236,8 +245,8 @@
             Continuous hardening against credential stuffing, phishing bots, and social engineering attacks.
           </p>
 
-          <div style="background: var(--bg-card-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); font-size: 0.82rem; font-weight: 600; color: var(--primary);">
-            256-Bit Cryptographic Signal Protection
+          <div class="crypto-spec-box tabular-nums" style="background: var(--bg-card-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); font-size: 0.84rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span class="math-spec">2<sup>256</sup></span> Bit Cryptographic Signal Protection
           </div>
 
           <!-- Floating Badges -->
@@ -636,7 +645,7 @@
         <!-- Column 1: Brand & About -->
         <div class="footer-col">
           <div class="brand-wrapper" style="margin-bottom: 1.25rem;">
-            <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="footer-logo-img cfg-logo-img" />
+            <img src="assets/logo.jpg" alt="Hafiz Talha Attari" class="footer-logo-img cfg-logo-img" width="190" height="54" loading="lazy" />
           </div>
           
           <p data-i18n="footer.aboutText">

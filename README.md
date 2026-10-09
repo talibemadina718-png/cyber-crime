@@ -28,11 +28,11 @@ A pixel-perfect, fully responsive, trilingual web application built with **HTML5
      - 👁️ **Read Online:** Opens the complete 23-page PDF in a new browser tab.
      - Embedded in Hero Section CTA buttons, Navigation bar, and Dedicated Guide Showcase card.
 
-5. **Trilingual Support & Bidirectional Text:**
-   - **Urdu (اردو - RTL)** — Active by default, uses `Noto Nastaliq Urdu` typography.
-   - **English (LTR)** — Uses `Plus Jakarta Sans` typography.
-   - **Arabic (العربية - RTL)** — Seamless RTL layout with crisp `Cairo` typography.
-   - Live real-time language switcher with persistent user preference in `localStorage`.
+5. **Three-Language Configuration & Bidirectional Text:**
+   - **Urdu (اردو - RTL)** — Active by default, uses `Noto Nastaliq Urdu` typography with authentic ligatures.
+   - **English (LTR)** — Standard global cybersecurity advisory typography with `Plus Jakarta Sans`.
+   - **Roman Urdu (LTR)** — Conversational Urdu written using English Latin alphabet for high accessibility.
+   - Live real-time language switcher (Desktop dropdown & Mobile drawer chips) with persistent user preference in `localStorage`.
 
 6. **12 Core Security Safeguards:**
    - Pixel-perfect cards highlighting two-step verification, passkeys, disable auto media download, chat lock, screen lock, link preview toggle, privacy settings, encrypted backups, linked devices audit, verification code protection, scam detection, and software updates.
@@ -50,7 +50,7 @@ A pixel-perfect, fully responsive, trilingual web application built with **HTML5
 ```text
 cyber crime/
 │
-├── index.html                           # Main semantic HTML5 structure with trilingual hooks
+├── index.html                           # Main semantic HTML5 structure with 3-language hooks
 ├── README.md                            # Documentation and setup guide
 │
 ├── assets/
@@ -58,11 +58,11 @@ cyber crime/
 │   └── WhatsApp-Security-Guide.pdf      # Official 23-page WhatsApp Security Guide PDF
 │
 ├── css/
-│   └── style.css                        # Complete responsive stylesheet (Design Tokens, RTL/LTR, Animations)
+│   └── style.css                        # Complete responsive stylesheet (Design Tokens, RTL/LTR, Math Specs, Animations)
 │
 └── js/
     ├── config.js                        # Centralized branding, contact & channel settings
-    ├── translations.js                  # Trilingual dictionary (EN, UR, AR)
+    ├── translations.js                  # Complete dictionary for English, Urdu, and Roman Urdu
     └── main.js                          # Core reactive controller (i18n, drawer, quiz, modal, toast)
 ```
 
