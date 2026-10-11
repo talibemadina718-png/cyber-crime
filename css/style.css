@@ -1,22 +1,58 @@
 /* ==============================================================================
    CYBER SECURITY & WHATSAPP ADVISORY PORTAL STYLESHEET
-   Supports Full Trilingual Localization (English LTR, Urdu RTL, Roman Urdu LTR)
+   Official WhatsApp Cyber Security Operations & Public Defense Platform
+   Typography: Jameel Noori Nastaleeq (Urdu Body), Bombay Black (Urdu Headings), Orbitron (Status HUD)
    ============================================================================== */
 
-/* --- GOOGLE FONTS IMPORT --- */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* --- WEB FONTS IMPORT (JAMEEL NOORI NASTALEEQ, GULZAR, ORBITRON, JETBRAINS MONO) --- */
+@import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Orbitron:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-/* --- DESIGN TOKENS / CSS VARIABLES --- */
+/* --- DIRECT FONT-FACE DEFINITIONS (ROBUST LOCAL & REMOTE FALLBACKS) --- */
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: local('Jameel Noori Nastaleeq'), 
+       local('Jameel Noori Nastaleeq Kasheeda'),
+       url('https://fonts.cdnfonts.com/s/149204/JameelNooriNastaleeqRegular.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bombay Black';
+  src: local('Bombay Black Unicode'), 
+       local('Bombay Black'), 
+       local('BombayBlack'), 
+       local('Bombay-Black');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- CYBER SECURITY DESIGN TOKENS & DEFENSE COLOR MATRIX --- */
 :root {
   --primary: #059669;
   --primary-hover: #047857;
   --primary-light: #ecfdf5;
-  --primary-glow: rgba(5, 150, 105, 0.2);
+  --primary-glow: rgba(5, 150, 105, 0.25);
   
   --secondary: #0f172a;
   --secondary-light: #1e293b;
   --accent-cyan: #06b6d4;
   --accent-emerald: #10b981;
+  
+  /* Security & Signal Cyber Accents */
+  --space-dark: #070d18;
+  --space-card: #0c1527;
+  --space-card-subtle: #111e38;
+  --laser-cyan: #00f0ff;
+  --laser-emerald: #00ff88;
+  --laser-amber: #f59e0b;
+  --laser-red: #ef4444;
+  --hud-border: rgba(0, 240, 255, 0.28);
+  --hud-glow: 0 0 25px rgba(0, 240, 255, 0.22);
+  --emerald-glow: 0 0 25px rgba(0, 255, 136, 0.28);
   
   --danger: #ef4444;
   --danger-light: #fef2f2;
@@ -49,13 +85,29 @@
   --radius-full: 9999px;
   
   --header-height: 74px;
+  --telemetry-bar-height: 36px;
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   
+  /* Font Families */
+  --font-family-ur-body: 'Jameel Noori Nastaleeq', 'Jameel Noori Nastaleeq Kasheeda', 'Noto Nastaliq Urdu', serif;
+  --font-family-ur-heading: 'Bombay Black', 'Bombay Black Unicode', 'Gulzar', 'Jameel Noori Nastaleeq', serif;
   --font-family-en: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-ur: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Gulzar', serif;
+  --font-family-en-heading: 'Orbitron', 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-family-roman: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-code: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-family-mono: 'Orbitron', 'JetBrains Mono', sans-serif;
+}
+
+/* --- JAMEEL NOORI NASTALEEQ TYPOGRAPHY UTILITY --- */
+.channel-nastaleeq {
+  font-family: 'Jameel Noori Nastaleeq', 'Jameel Noori Nastaleeq Kasheeda', 'Noto Nastaliq Urdu', serif !important;
+  direction: rtl;
+  display: inline-block;
+  letter-spacing: 0;
+  line-height: 1.6;
+  font-weight: 500;
+  vertical-align: middle;
 }
 
 /* --- RESET & GLOBAL SETTINGS --- */
@@ -94,24 +146,44 @@ body.font-en {
 body.font-en h1,
 body.font-en h2,
 body.font-en h3,
-body.font-en h4 {
+body.font-en h4,
+body.font-en .hero-title,
+body.font-en .section-title {
+  font-family: var(--font-family-en-heading);
   letter-spacing: -0.025em;
   font-weight: 800;
 }
 
+/* URDU TYPOGRAPHY: JAMEEL NOORI NASTALEEQ (BODY) + BOMBAY BLACK (HEADINGS) */
 body.font-ur {
-  font-family: var(--font-family-ur);
-  line-height: 2.25;
-  font-size: 1.05rem;
+  font-family: var(--font-family-ur-body);
+  line-height: 2.3;
+  font-size: 1.08rem;
   letter-spacing: 0;
 }
 
 body.font-ur h1, 
 body.font-ur h2, 
 body.font-ur h3, 
-body.font-ur h4 {
-  line-height: 1.9;
-  font-weight: 700;
+body.font-ur h4,
+body.font-ur .hero-title,
+body.font-ur .section-title,
+body.font-ur .channel-title,
+body.font-ur .warning-title,
+body.font-ur .brand-name,
+body.font-ur .card-title,
+body.font-ur .guide-card h3,
+body.font-ur .recovery-scenario-title,
+body.font-ur .checker-question,
+body.font-ur .faq-question-btn span:first-child,
+body.font-ur .btn-lg,
+body.font-ur .btn-primary,
+body.font-ur .btn-secondary,
+body.font-ur .nav-link,
+body.font-ur .stat-item span {
+  font-family: var(--font-family-ur-heading);
+  line-height: 1.65;
+  font-weight: 800;
   letter-spacing: 0;
 }
 
@@ -125,14 +197,17 @@ body.font-roman {
 body.font-roman h1, 
 body.font-roman h2, 
 body.font-roman h3, 
-body.font-roman h4 {
+body.font-roman h4,
+body.font-roman .hero-title,
+body.font-roman .section-title {
+  font-family: var(--font-family-en-heading);
   line-height: 1.35;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 /* Tabular Figures & Cryptographic / Mathematical Typography */
-.tabular-nums, .math-spec, .cipher-spec {
+.tabular-nums, .math-spec, .cipher-spec, .telemetry-clock, .telemetry-val {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
 }
@@ -180,6 +255,108 @@ button, input, select, textarea {
   margin-right: auto;
   padding-left: clamp(1rem, 2.5vw, 2rem);
   padding-right: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ==============================================================================
+   SITE ADVISORY BAR // CYBER DEFENSE TELEMETRY
+   ============================================================================== */
+.site-advisory-bar,
+.telemetry-bar {
+  background: #060a14;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  color: #94a3b8;
+  font-family: var(--font-family-code);
+  font-size: 0.76rem;
+  padding: 0.35rem 0;
+  position: relative;
+  z-index: 1002;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.advisory-flex,
+.telemetry-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.advisory-left, .advisory-center, .advisory-right,
+.telemetry-left, .telemetry-center, .telemetry-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.advisory-beacon,
+.telemetry-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--laser-emerald);
+  box-shadow: 0 0 10px var(--laser-emerald);
+  animation: beaconBlink 1.2s infinite;
+  display: inline-block;
+}
+
+@keyframes beaconBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+.advisory-badge,
+.telemetry-badge {
+  background: rgba(0, 240, 255, 0.12);
+  color: var(--laser-cyan);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+}
+
+.advisory-status,
+.telemetry-status {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.advisory-crypto,
+.telemetry-crypto {
+  color: var(--laser-emerald);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.74rem;
+}
+
+.advisory-clock,
+.telemetry-clock {
+  color: #cbd5e1;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.telemetry-sound-toggle {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: var(--laser-emerald);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.telemetry-sound-toggle:hover {
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -686,80 +863,276 @@ button, input, select, textarea {
   align-items: center;
 }
 
-.shield-graphic-card {
+/* WhatsApp Cyber Security Console & Signal Protocol Scope Styling */
+.whatsapp-console-card {
   position: relative;
   width: 100%;
-  max-width: 440px;
-  background: linear-gradient(145deg, #ffffff, #f8fafc);
-  border: 1px solid var(--border-subtle);
+  max-width: 470px;
+  background: linear-gradient(165deg, #0c1527 0%, #060b14 100%);
+  border: 1px solid rgba(0, 240, 255, 0.35);
   border-radius: var(--radius-xl);
-  padding: 2.5rem 2rem;
-  box-shadow: var(--shadow-xl);
-  text-align: center;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 240, 255, 0.15);
+  color: #ffffff;
+  overflow: hidden;
 }
 
-.shield-center-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+/* HUD Corner Brackets */
+.hud-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.hud-corner.top-left {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid var(--laser-cyan);
+  border-left: 2px solid var(--laser-cyan);
+}
+
+.hud-corner.top-right {
+  top: 8px;
+  right: 8px;
+  border-top: 2px solid var(--laser-cyan);
+  border-right: 2px solid var(--laser-cyan);
+}
+
+.hud-corner.bottom-left {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2px solid var(--laser-cyan);
+  border-left: 2px solid var(--laser-cyan);
+}
+
+.hud-corner.bottom-right {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid var(--laser-cyan);
+  border-right: 2px solid var(--laser-cyan);
+}
+
+.console-station-header,
+.radar-station-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.console-live-indicator,
+.radar-live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.console-live-dot,
+.radar-live-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background: var(--laser-emerald);
+  box-shadow: 0 0 8px var(--laser-emerald);
+  animation: beaconBlink 1s infinite;
+}
+
+.console-live-text,
+.radar-live-text {
+  font-family: var(--font-family-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--laser-cyan);
+  letter-spacing: 0.05em;
+}
+
+.console-frequency,
+.radar-frequency {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-family: var(--font-family-code);
+}
+
+/* Security Scope & Radar Display */
+.security-scope-wrapper,
+.radar-scope-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(5, 150, 105, 0.04) 50%, rgba(6, 11, 20, 0.95) 100%);
+  border: 2px solid rgba(0, 240, 255, 0.45);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.25), inset 0 0 25px rgba(0, 240, 255, 0.15);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
-  box-shadow: var(--shadow-glow);
-  position: relative;
 }
 
-.shield-center-icon::after {
-  content: '';
+.security-grid-lines,
+.radar-grid-lines {
   position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px dashed rgba(5, 150, 105, 0.35);
-  animation: rotateSlow 24s linear infinite;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
+  background-size: 27.5px 27.5px;
+  background-position: center center;
 }
 
-@keyframes rotateSlow {
+.security-ring,
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 240, 255, 0.3);
+  pointer-events: none;
+}
+
+.security-ring.ring-1, .radar-ring.ring-1 { width: 70px; height: 70px; }
+.security-ring.ring-2, .radar-ring.ring-2 { width: 130px; height: 130px; }
+.security-ring.ring-3, .radar-ring.ring-3 { width: 190px; height: 190px; }
+
+.security-radar-pulse,
+.radar-sweep-arm {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(0, 255, 136, 0.4) 0deg, rgba(0, 240, 255, 0.1) 45deg, transparent 75deg);
+  animation: radarSweep 3.4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radarSweep {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-.floating-security-badge {
+.radar-blip {
   position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+  animation: blipPulse 2.4s infinite ease-in-out;
+}
+
+.radar-blip.blip-1 {
+  top: 35px;
+  right: 55px;
+  background: var(--laser-emerald);
+  color: var(--laser-emerald);
+}
+
+.radar-blip.blip-2 {
+  bottom: 45px;
+  left: 45px;
+  background: var(--laser-cyan);
+  color: var(--laser-cyan);
+  animation-delay: 0.8s;
+}
+
+.radar-blip.blip-3 {
+  bottom: 80px;
+  right: 40px;
+  background: #10b981;
+  color: #10b981;
+  animation-delay: 1.4s;
+}
+
+@keyframes blipPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.6); opacity: 0.3; }
+}
+
+.security-center-shield,
+.radar-center-shield {
+  position: relative;
+  z-index: 2;
+  color: var(--laser-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.8));
+}
+
+/* Console Telemetry Grid */
+.console-telemetry-grid,
+.radar-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  background: rgba(11, 22, 42, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.console-cell,
+.telemetry-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.console-label,
+.telemetry-label {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-family: var(--font-family-code);
+  letter-spacing: 0.05em;
+}
+
+.console-val,
+.telemetry-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: var(--font-family-code);
+  color: #ffffff;
+}
+
+.btn-radar-ping {
+  border-color: rgba(0, 240, 255, 0.4);
+  color: var(--laser-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  font-size: 0.82rem;
+  font-family: var(--font-family-code);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.btn-radar-ping:hover {
+  background: rgba(0, 240, 255, 0.22);
+  border-color: var(--laser-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  color: #ffffff;
+}
+
+/* Emergency Lockdown Button */
+.btn-emergency-lockdown {
+  background: linear-gradient(135deg, #b91c1c, #dc2626);
+  color: #ffffff;
+  border: 1px solid rgba(254, 202, 202, 0.4);
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-family: var(--font-family-code);
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  background: #ffffff;
-  padding: 0.5rem 0.85rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  font-size: 0.8rem;
-  font-weight: 700;
-  border: 1px solid var(--border-subtle);
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+  transition: all var(--transition-fast);
 }
 
-.badge-top-right {
-  top: 15px;
-  right: -15px;
-  color: var(--primary);
-}
-
-[dir="rtl"] .badge-top-right {
-  right: auto;
-  left: -15px;
-}
-
-.badge-bottom-left {
-  bottom: 20px;
-  left: -20px;
-  color: var(--warning);
-}
-
-[dir="rtl"] .badge-bottom-left {
-  left: auto;
-  right: -20px;
+.btn-emergency-lockdown:hover {
+  background: linear-gradient(135deg, #991b1b, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.65);
 }
 
 /* --- CRITICAL SECURITY WARNING BANNER --- */
@@ -1102,6 +1475,101 @@ button, input, select, textarea {
   font-size: 0.92rem;
   color: var(--text-main);
   list-style: disc;
+}
+
+/* Interactive Security Assessment Console Terminal */
+.security-scan-terminal {
+  display: none;
+  background: #060b14;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1.75rem;
+  font-family: var(--font-family-code);
+  color: #00ff88;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.security-scan-terminal.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+  font-size: 0.76rem;
+  color: var(--laser-cyan);
+}
+
+.terminal-progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  margin-bottom: 1rem;
+}
+
+.terminal-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00f0ff, #00ff88);
+  box-shadow: 0 0 10px #00ff88;
+  transition: width 0.15s ease-out;
+}
+
+.terminal-logs {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-height: 130px;
+  overflow-y: auto;
+  color: #94a3b8;
+}
+
+.terminal-log-line {
+  margin-bottom: 0.25rem;
+}
+
+.terminal-log-line.success {
+  color: #00ff88;
+}
+
+.terminal-log-line.warn {
+  color: #f59e0b;
+}
+
+/* Security Verification Clearance Badge */
+.security-clearance-badge-box {
+  background: linear-gradient(145deg, #0a1324, #060b14);
+  border: 2px solid rgba(0, 240, 255, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+}
+
+.clearance-stamp {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 255, 136, 0.15);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-family: var(--font-family-code);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
 }
 
 /* --- RECOVERY WIZARD SECTION --- */
@@ -1941,4 +2409,297 @@ textarea.form-control {
   .measures-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==============================================================================
+   UNIVERSAL SECURITY SEARCH BAR & DYNAMIC FILTERING
+   ============================================================================== */
+.security-search-container {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.65rem 0.35rem 1.25rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-light), 0 8px 24px rgba(5, 150, 105, 0.12);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+[dir="rtl"] .search-icon {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+.security-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  padding: 0.6rem 0;
+}
+
+.security-search-input::placeholder {
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+.search-clear-btn {
+  background: var(--bg-card-subtle);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.search-clear-btn:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.search-results-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding: 0 0.75rem;
+}
+
+.results-count-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.search-reset-pill {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.search-reset-pill:hover {
+  color: var(--danger);
+}
+
+.search-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ==============================================================================
+   MODAL ENHANCEMENTS (LARGE MODAL & KNOWLEDGE BASE READER)
+   ============================================================================== */
+.modal-box.modal-lg {
+  max-width: 780px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.guide-reader-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.guide-modal-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.guide-modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.guide-modal-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.platform-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--bg-card-subtle);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.platform-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.platform-tab-btn:hover {
+  background: var(--bg-card-subtle);
+  color: var(--text-main);
+}
+
+.platform-tab-btn.active {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.guide-platform-content-box {
+  background: var(--bg-card-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  white-space: pre-line;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.guide-modal-meta-box {
+  background: #f0fdf4;
+  border-left: 4px solid var(--primary);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+
+[dir="rtl"] .guide-modal-meta-box {
+  border-left: none;
+  border-right: 4px solid var(--primary);
+}
+
+.meta-tip-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.meta-tip-text {
+  font-size: 0.88rem;
+  color: #166534;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==============================================================================
+   OFFICIAL RECOVERY EMAIL GENERATOR CARD
+   ============================================================================== */
+.email-generator-card {
+  background: #0f172a;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  color: #ffffff;
+}
+
+.email-preview-field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
+  flex-wrap: wrap;
+}
+
+.email-field-tag {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.email-field-val {
+  color: #10b981;
+  font-family: var(--font-family-code);
+  font-size: 0.85rem;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.email-preview-body-wrap {
+  margin-top: 1rem;
+}
+
+.email-preview-code {
+  background: #060b14;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-family: var(--font-family-code);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  margin-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
 }

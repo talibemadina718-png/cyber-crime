@@ -38,10 +38,18 @@ A pixel-perfect, fully responsive, trilingual web application built with **HTML5
    - Pixel-perfect cards highlighting two-step verification, passkeys, disable auto media download, chat lock, screen lock, link preview toggle, privacy settings, encrypted backups, linked devices audit, verification code protection, scam detection, and software updates.
 
 7. **Interactive Functional Modules:**
-   - **Security Health Checker:** 5-point vulnerability assessment calculating risk posture with customized remediation tips.
-   - **Account Recovery Wizard:** 4-scenario diagnostic selector with step-by-step guidance and a 1-click **Official WhatsApp Support Email Draft Generator**.
-   - **Threat Incident Report Modal:** Interactive form with reference ticket generation (`CYB-XXXXXX`).
+   - **Universal Real-Time Search Bar:** Instant live filter across all 12 measures and knowledge articles with match counters and reset shortcuts.
+   - **6-Article Knowledge Base & Guide Reader Modal:** Dedicated guides covering Passkeys/2FA, Linked Devices/QR, Scam & OTP Defense, Encrypted Backups, Privacy Blueprint, and Emergency Account Recovery with platform-specific instructions for Android, iPhone (iOS), and WhatsApp Web/Desktop.
+   - **Official Meta Support Email Draft Generator:** Modal with live phone number interpolation, 1-click clipboard copy (`navigator.clipboard`), and direct `mailto:` launcher formatted to trigger WhatsApp's automated account deactivation protocol.
+   - **Security Health Checker:** Honest 5-point self-assessment diagnostic tool calculating vulnerability posture with personalized hardening advice, saved locally to `localStorage`.
+   - **Account Recovery Wizard:** 4-scenario diagnostic selector with step-by-step guidance.
+   - **Threat Incident Report Modal:** Interactive form with input validation and reference ticket generation (`CYB-XXXXXX`).
    - **FAQ Accordion:** Expandable security advice for common attack vectors.
+
+8. **Typography & Font Integrity:**
+   - WhatsApp Channel name "**راہِ عــلم راہِ جــنت**" rendered in authentic **Jameel Noori Nastaleeq** (`.channel-nastaleeq`) font across all screens.
+   - Headings rendered in **Bombay Black** (`'Bombay Black', 'Gulzar'`).
+   - Body text in **Jameel Noori Nastaleeq** (Urdu) and **Plus Jakarta Sans** (English & Roman Urdu).
 
 ---
 

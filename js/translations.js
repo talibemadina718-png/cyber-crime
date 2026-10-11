@@ -40,7 +40,7 @@ const TRANSLATIONS = {
     },
     whatsappChannel: {
       badge: "Official Knowledge Channel",
-      title: "Rah-e-Ilm Rah-e-Jannat 📖🔏",
+      title: "راہِ عــلم راہِ جــنت 📖🔏",
       invitation: "📲 Follow this channel to receive invaluable Islamic knowledge and beautiful writings: 👇🏻",
       btnFollow: "Follow WhatsApp Channel",
     },
@@ -193,6 +193,13 @@ const TRANSLATIONS = {
       step4Desc: "Send an email to support@whatsapp.com with the subject 'Lost/Stolen: Please deactivate my account' including your phone number in full international format.",
       btnDraftEmail: "Generate Support Email Template",
     },
+    searchSection: {
+      placeholder: "Search 12 measures, guides, scams & settings... (e.g. 2FA, Passkeys, QR, Recovery)",
+      badge: "Live Search Filter",
+      resultsCount: "result(s) found",
+      clearBtn: "Clear Filter",
+      noResults: "No security measures or guides found matching your query. Try searching for 'PIN', 'Backup', 'Scam' or 'Device'.",
+    },
     guideSection: {
       badge: "Knowledge Base",
       title: "Dedicated Cyber Security Guide",
@@ -202,15 +209,113 @@ const TRANSLATIONS = {
       tabRecovery: "Emergency Recovery",
       tabScams: "Scam Awareness",
       tabPrivacy: "Privacy Blueprint",
-      placeholderLabel: "Dedicated Guide Content Container",
-      placeholderDescription: "This pre-styled container is ready for dynamic guide content, markdown tutorials, or educational media insertion.",
       btnReadMore: "Read Complete Documentation",
-      guideCard1Title: "Understanding QR Code Hijacking (Ghost Sessions)",
-      guideCard1Desc: "How attackers exploit public Wi-Fi and counterfeit login pages to mirror your WhatsApp chats on unapproved web sessions.",
-      guideCard2Title: "Impersonation Scams & Fraudulent Support Agents",
-      guideCard2Desc: "Dissecting real-world social engineering cases where attackers masquerade as security executives or family members in crisis.",
-      guideCard3Title: "The Comprehensive Digital Hygiene Checklist",
-      guideCard3Desc: "A complete 15-minute routine to audit all connected accounts, cloud archives, and permission authorizations.",
+      articles: [
+        {
+          id: "passkeys-2fa",
+          category: "account",
+          badge: "Core Shield",
+          title: "Passkeys & Two-Step Verification: The Impenetrable Layer",
+          desc: "Protect your account with a personal 6-digit PIN, verified recovery email, and modern biometric Passkeys (fingerprint/face recognition).",
+          icon: "shield-check",
+          platforms: {
+            android: "1. Open WhatsApp > Tap More options (⋮) > Settings > Account.\n2. Tap 'Two-step verification' > Turn on.\n3. Enter a 6-digit PIN you can remember and confirm it.\n4. Provide an active email address for recovery (CRITICAL to avoid permanent lockouts).\n5. For Passkeys: Return to Account > Passkeys > Create a passkey > Verify screen lock.",
+            iphone: "1. Open WhatsApp > Settings (bottom right) > Account.\n2. Tap 'Two-Step Verification' > Turn On.\n3. Enter your 6-digit PIN and confirm it.\n4. Enter your personal recovery email.\n5. For Passkeys: Tap Account > Passkeys > Set up passkey > Verify Face ID / Touch ID.",
+            web: "Passkeys and Two-Step Verification must be configured on your primary mobile phone. Once active, linked WhatsApp Web and Desktop sessions are secured under this account encryption."
+          },
+          metaTip: "Official WhatsApp rule: WhatsApp support staff will NEVER ask for your 6-digit registration code or 2FA PIN via chat or call."
+        },
+        {
+          id: "linked-devices-qr",
+          category: "account",
+          badge: "Session Hygiene",
+          title: "Linked Devices & QR Hijacking: Eliminating Ghost Sessions",
+          desc: "Audit active browser connections, disconnect unknown computers, and understand how attackers exploit counterfeit QR login pages.",
+          icon: "laptop",
+          platforms: {
+            android: "1. Open WhatsApp > Tap (⋮) > Linked devices.\n2. Review the list of 'Device status' sessions and their last active timestamps.\n3. If you see an unfamiliar browser, Windows PC, or Mac, tap it immediately.\n4. Tap 'Log Out'.\n5. Enable biometric authentication for linking new devices under Settings > Linked Devices.",
+            iphone: "1. Open WhatsApp > Settings > Linked Devices.\n2. Audit all active WhatsApp Web/Desktop sessions.\n3. Tap any unrecognized device > tap 'Log Out'.\n4. Ensure Face ID / Touch ID is required whenever a new device is paired.",
+            web: "Always click the three dots (⋮) > Log Out when using WhatsApp Web on shared, library, or office computers. Never leave sessions open."
+          },
+          metaTip: "WhatsApp automatically logs out Web sessions after 14 to 30 days of inactivity on your phone."
+        },
+        {
+          id: "scam-otp-defense",
+          category: "scams",
+          badge: "Fraud Defense",
+          title: "Scam Detection, Impersonation & OTP Theft Defense",
+          desc: "Dissect real-world social engineering cases where attackers simulate emergency family distress, fake lottery prizes, or WhatsApp staff verification.",
+          icon: "alert-triangle",
+          platforms: {
+            android: "1. If a message asks for a 6-digit SMS code: DO NOT SHARE IT.\n2. If someone claims to be family in an emergency: Call them directly on a standard cellular voice call first.\n3. To Block & Report: Open chat > Tap contact name > Scroll down > Tap 'Report contact' and check 'Block contact and delete chat'.",
+            iphone: "1. Never screenshot or forward SMS verification codes.\n2. To Report & Block: Tap contact header > Scroll down > Tap 'Report [Contact]' > Confirm 'Report and Block'.\n3. Review Settings > Privacy > Blocked to verify blocked malicious numbers.",
+            web: "Do not open forwarded suspicious URLs (.apk links, spoofed short-links, or fake prize forms) received in WhatsApp Web chats."
+          },
+          metaTip: "Official Meta alerts always come from verified accounts with a green checkmark badge next to the name, never plain mobile numbers."
+        },
+        {
+          id: "encrypted-backups",
+          category: "privacy",
+          badge: "Cloud Defense",
+          title: "End-to-End Encrypted Backups: Securing Cloud Archives",
+          desc: "Standard cloud backups (Google Drive / iCloud) are vulnerable without client-side encryption. Secure your backups with a 64-digit key or password.",
+          icon: "cloud-lock",
+          platforms: {
+            android: "1. Open WhatsApp > Tap (⋮) > Settings > Chats > Chat backup.\n2. Tap 'End-to-end encrypted backup' > Turn On.\n3. Create a unique password OR generate a 64-digit encryption key.\n4. Save your 64-digit key in a secure physical notebook or password manager.\n5. Tap 'Create' and wait for WhatsApp to encrypt the backup.",
+            iphone: "1. Open WhatsApp > Settings > Chats > Chat Backup.\n2. Tap 'End-to-End Encrypted Backup' > Turn On.\n3. Choose 'Create Password' or 'Use 64-digit Encryption Key'.\n4. Tap 'Create' to encrypt your iCloud backup.",
+            web: "Backup encryption must be managed on the primary phone. Neither Google, Apple, nor Meta can decrypt this backup without your password/key."
+          },
+          metaTip: "Warning: If you forget your password or lose the 64-digit key, Meta cannot recover your encrypted backup."
+        },
+        {
+          id: "privacy-controls",
+          category: "privacy",
+          badge: "Anti-Surveillance",
+          title: "Privacy Blueprint: Groups, Calls, Profile & Status Controls",
+          desc: "Block automated spam group additions, silence calls from unknown numbers, and prevent IP address leakage during WhatsApp voice calls.",
+          icon: "eye-off",
+          platforms: {
+            android: "1. Groups: Settings > Privacy > Groups > Choose 'My contacts except...' to prevent strangers from adding you to crypto/scam groups.\n2. Calls: Settings > Privacy > Calls > Enable 'Silence unknown callers'.\n3. Protect IP: Settings > Privacy > Advanced > Enable 'Protect IP address in calls'.\n4. Profile: Set Last Seen & Online, Profile Photo, and About to 'My Contacts'.",
+            iphone: "1. Groups: WhatsApp Settings > Privacy > Groups > Set to 'My Contacts'.\n2. Calls: Settings > Privacy > Calls > Turn on 'Silence Unknown Callers'.\n3. IP Shield: Settings > Privacy > Advanced > Turn on 'Protect IP Address in Calls'.\n4. Status: Settings > Privacy > Status > Restrict to trusted contacts.",
+            web: "Privacy modifications automatically synchronize from phone to all active web sessions."
+          },
+          metaTip: "Enabling 'Protect IP address in calls' relays your 1-on-1 voice calls through Meta servers, concealing your real location and IP from callers."
+        },
+        {
+          id: "emergency-recovery",
+          category: "recovery",
+          badge: "Rapid Response",
+          title: "Official Meta Recovery Protocol for Compromised Accounts",
+          desc: "The verified step-by-step procedure to regain control after being hacked, bypass intruder-set 2FA PINs, and trigger immediate session termination.",
+          icon: "zap",
+          platforms: {
+            android: "1. Sign into WhatsApp with your phone number on your device.\n2. Confirm your number and enter the 6-digit code received via SMS.\n3. Entering this SMS code IMMEDIATELY logs the hacker out from all phones and web sessions.\n4. If the hacker set a 2FA PIN: You must wait 7 days without entering a PIN. After 7 days, tap 'Forgot PIN' to sign in.\n5. CRITICAL: The hacker CANNOT read your chats during this 7-day period because they were logged out in Step 2.",
+            iphone: "1. Re-register WhatsApp with your phone number immediately.\n2. Verify the 6-digit SMS code.\n3. The intruder is kicked out instantly across the world.\n4. If asked for a 2FA PIN set by the thief, wait the standard 7-day cooldown.\n5. Send an emergency email to support@whatsapp.com with subject: 'Lost/Stolen: Please deactivate my account'.",
+            web: "If your account is compromised, all WhatsApp Web and Desktop sessions are terminated automatically the moment SMS verification succeeds."
+          },
+          metaTip: "Official Meta Help Center Recovery FAQ: https://faq.whatsapp.com/1131652977717250"
+        }
+      ]
+    },
+    guideReaderModal: {
+      title: "Security Knowledge Base",
+      tabAndroid: "Android Guide",
+      tabIphone: "iPhone (iOS)",
+      tabWeb: "Web & Desktop",
+      proTipTitle: "Official Meta Security Standard",
+      btnClose: "Close Guide",
+    },
+    emailModal: {
+      title: "Official Meta Incident Recovery Email Generator",
+      subtitle: "WhatsApp's automated bot parses this exact subject and international phone number format to terminate intruder sessions within minutes.",
+      phoneLabel: "Your Compromised Phone Number (International format):",
+      recipientLabel: "Official Recipient:",
+      subjectLabel: "Standard Meta Subject Line:",
+      bodyLabel: "Email Body Preview:",
+      btnCopy: "Copy Support Email Draft",
+      btnOpenEmail: "Launch Email App (mailto)",
+      copiedToast: "Official recovery email draft copied to clipboard!",
+      helpText: "Send this email from your registered email account to support@whatsapp.com.",
     },
     reportModal: {
       title: "Report Cyber Threat or Incident",
@@ -458,6 +563,13 @@ const TRANSLATIONS = {
       step4Desc: "ای میل support@whatsapp.com پر بھیجیں۔ مضمون لکھیں 'Lost/Stolen: Please deactivate my account' اور اپنا مکمل نمبر بین الاقوامی کوڈ کے ساتھ لکھیں۔",
       btnDraftEmail: "سپورٹ ای میل ٹیمپلیٹ بنائیں",
     },
+    searchSection: {
+      placeholder: "12 حفاظتی اقدامات، گائیڈز اور ترتیبات میں تلاش کریں... (مثلاً 2FA، پاس کیز، کیو آر، بیک اپ)",
+      badge: "لائیو سرچ فلٹر",
+      resultsCount: "نتائج ملے",
+      clearBtn: "فلٹر ختم کریں",
+      noResults: "آپ کی تلاش کے مطابق کوئی سیکیورٹی اقدام یا گائیڈ نہیں ملا۔ 'پن'، 'بیک اپ'، 'فراڈ' یا 'ڈیوائس' لکھ کر تلاش کریں۔",
+    },
     guideSection: {
       badge: "معلوماتی گائیڈ بک",
       title: "مخصوص سائبر سیکیورٹی گائیڈ سیکشن",
@@ -467,15 +579,113 @@ const TRANSLATIONS = {
       tabRecovery: "ایمرجنسی ریکوری",
       tabScams: "فراڈ اور دھوکے کی اقسام",
       tabPrivacy: "پرائیویسی گائیڈ",
-      placeholderLabel: "مخصوص گائیڈ کنٹینٹ کنٹینر",
-      placeholderDescription: "یہ کارڈ اور کنٹینر مستقبل میں تفصیلی گائیڈ، مضامین اور میڈیا مواد داخل کرنے کے لیے تیار شدہ ہے۔",
       btnReadMore: "مکمل دستاویزات پڑھیں",
-      guideCard1Title: "کیو آر کوڈ ہائی جیکنگ اور گھوسٹ سیشنز کی حقیقت",
-      guideCard1Desc: "ہیکرز عوامی وائی فائی یا جعلی ویب پیجز کے ذریعے آپ کا واٹس ایپ ویب سیشن کیسے چوری کرتے ہیں۔",
-      guideCard2Title: "جعلی سپورٹ اور رشتہ دار بن کر دھوکہ دہی",
-      guideCard2Desc: "سوشل انجینئرنگ کے ان حملوں کا تفصیلی جائزہ جن میں نامعلوم افراد ہنگامی مالی مدد یا کوڈ کا جھانسہ دیتے ہیں۔",
-      guideCard3Title: "15 منٹ کا مکمل ڈیجیٹل سیکیورٹی آڈٹ",
-      guideCard3Desc: "تمام منسلک ڈیوائسز، کلاؤڈ اسٹوریج اور ایپ پرمیشنز کا جامع اور آسان جائزہ لینے کا طریقہ کار۔",
+      articles: [
+        {
+          id: "passkeys-2fa",
+          category: "account",
+          badge: "بنیادی ڈھال",
+          title: "پاس کیز اور ٹو اسٹیپ ویریفکیشن: ناقابل تسخیر حفاظتی ڈھال",
+          desc: "اپنے اکاؤنٹ کو 6 ہندسوں کے ذاتی پن کوڈ، تصدیق شدہ ریکوری ای میل اور جدید ترین بائیومیٹرک پاس کیز کے ذریعے فول پروف بنائیں۔",
+          icon: "shield-check",
+          platforms: {
+            android: "1. واٹس ایپ کھولیں > اوپر دائیں جانب تھری ڈاٹس (⋮) پر ٹیپ کریں > Settings > Account۔\n2. 'Two-step verification' پر ٹیپ کریں > Turn on منتخب کریں۔\n3. اپنا 6 ہندسوں کا خفیہ پن کوڈ درج کریں اور تصدیق کریں۔\n4. ایک فعال ای میل ایڈریس لازمی فراہم کریں (پن بھول جانے کی صورت میں اکاؤنٹ بحالی کے لیے انتہائی ضروری ہے)۔\n5. پاس کیز: Account > Passkeys > Create a passkey پر ٹیپ کریں اور فنگر پرنٹ یا اسکرین لاک سے تصدیق کریں۔",
+            iphone: "1. واٹس ایپ سیٹنگز > Account پر جائیں۔\n2. 'Two-Step Verification' > Enable پر ٹیپ کریں۔\n3. اپنا 6 ہندسوں کا پن کوڈ اور ریکوری ای میل درج کریں۔\n4. پاس کیز: Account > Passkeys > Set up passkey منتخب کریں اور Face ID یا Touch ID سے فعال کریں۔",
+            web: "ٹو اسٹیپ ویریفکیشن اور پاس کیز بنیادی موبائل ڈیوائس پر سیٹ کی جاتی ہیں، جس کے بعد تمام منسلک کمپیوٹر سیشنز خود بخود محفوظ ہو جاتے ہیں۔"
+          },
+          metaTip: "میٹا کا سنہری اصول: واٹس ایپ سپورٹ کا کوئی بھی نمائندہ کبھی بھی چیٹ یا کال پر آپ کا 6 ہندسوں کا کوڈ یا پن نہیں مانگے گا۔"
+        },
+        {
+          id: "linked-devices-qr",
+          category: "account",
+          badge: "سیشن آڈٹ",
+          title: "منسلک ڈیوائسز اور کیو آر ہائی جیکنگ: غیر مجاز سیشنز کا خاتمہ",
+          desc: "تمام منسلک براؤزرز اور کمپیوٹرز کا باقاعدہ معائنہ کریں، نامعلوم سیشنز کو فوری لاگ آؤٹ کریں اور کیو آر ہیکنگ کے خطرے کو ختم کریں۔",
+          icon: "laptop",
+          platforms: {
+            android: "1. واٹس ایپ مینو (⋮) > Linked devices کھولیں۔\n2. تمام ایکٹو ڈیوائسز اور ان کے آخری استعمال کا وقت چیک کریں۔\n3. اگر کوئی انجان براؤزر یا کمپیوٹر نظر آئے تو اس پر ٹیپ کریں اور 'Log Out' دبا دیں۔\n4. نئی ڈیوائس منسلک کرنے کے لیے بائیومیٹرک اسکرین لاک کی شرط لازمی آن رکھیں۔",
+            iphone: "1. واٹس ایپ سیٹنگز > Linked Devices کھولیں۔\n2. نامعلوم کمپیوٹر یا سیشن پر ٹیپ کر کے فوری 'Log Out' کریں۔\n3. Face ID تصدیق کی موجودگی یقینی بنائیں۔",
+            web: "عوامی یا دفتری کمپیوٹرز پر واٹس ایپ ویب استعمال کرنے کے بعد تھری ڈاٹس سے 'Log Out' کرنا کبھی نہ بھولیں۔"
+          },
+          metaTip: "اگر آپ کا موبائل 14 سے 30 دن تک غیر فعال رہے تو واٹس ایپ تمام ویب سیشنز خود بخود بند کر دیتا ہے۔"
+        },
+        {
+          id: "scam-otp-defense",
+          category: "scams",
+          badge: "فراڈ سے بچاؤ",
+          title: "فراڈ کی شناخت، جعلی نمائندے اور او ٹی پی کوڈ چوری سے بچاؤ",
+          desc: "سوشل انجینئرنگ کے ہتھکنڈوں کی شناخت کریں جہاں ہیکرز ہنگامی گھریلو مدد، انعامی اسکیموں یا واٹس ایپ ایڈمن بن کر کوڈ چراتے ہیں۔",
+          icon: "alert-triangle",
+          platforms: {
+            android: "1. کسی کو بھی اپنا 6 ہندسوں کا ایس ایم ایس کوڈ نہ بتائیں، خواہ وہ قریبی دوست کے اکاؤنٹ سے ہی کیوں نہ آیا ہو۔\n2. اگر کوئی ہنگامی مالی امداد مانگے تو پہلے عام فون کال کر کے آواز سے تصدیق کریں۔\n3. مشکوک نمبر کو رپورٹ اور بلاک کریں: چیٹ کھولیں > نام پر ٹیپ کریں > نیچے سکرول کر کے 'Report contact' اور 'Block' منتخب کریں۔",
+            iphone: "1. ایس ایم ایس کوڈ کے اسکرین شاٹس کبھی کسی کو نہ بھیجیں۔\n2. رابطہ پر ٹیپ کریں > Report > Report and Block کریں۔\n3. Settings > Privacy > Blocked میں جا کر بلاک شدہ نمبرز چیک کریں۔",
+            web: "واٹس ایپ چیٹس میں موصول ہونے والے انجان لنکس یا مشکوک فائلز (جیسے .apk) پر کبھی کلک نہ کریں۔"
+          },
+          metaTip: "آفیشل میٹا یا واٹس ایپ اکاؤنٹس کے نام کے ساتھ ہمیشہ سبز رنگ کا تصدیقی بیج (Green Tick) ہوتا ہے۔"
+        },
+        {
+          id: "encrypted-backups",
+          category: "privacy",
+          badge: "کلاؤڈ سیکیورٹی",
+          title: "اینڈ ٹو اینڈ اینکرپٹڈ بیک اپ: کلاؤڈ چیٹس کا مکمل تحفظ",
+          desc: "گوگل ڈرائیو اور آئی کلاؤڈ پر محفوظ چیٹ بیک اپس کو 64 ہندسوں کی اینکرپشن کی یا پاس ورڈ کے ذریعے ہیکرز اور غیر مجاز رسائی سے محفوظ رکھیں۔",
+          icon: "cloud-lock",
+          platforms: {
+            android: "1. واٹس ایپ (⋮) > Settings > Chats > Chat backup پر جائیں۔\n2. 'End-to-end encrypted backup' منتخب کریں اور Turn On کریں۔\n3. اپنا ذاتی پاس ورڈ درج کریں یا 64 ہندسوں کی اینکرپشن کی بنائیں اور کسی محفوظ کاپی پر نوٹ کر لیں۔\n4. Create پر ٹیپ کریں تاکہ بیک اپ مکمل انکرپٹ ہو جائے۔",
+            iphone: "1. Settings > Chats > Chat Backup > End-to-End Encrypted Backup > Turn On۔\n2. پاس ورڈ سیٹ کریں اور بیک اپ محفوظ کریں۔",
+            web: "کلاؤڈ بیک اپ انکرپشن کو صرف موبائل ایپ کے ذریعے ہی کنٹرول کیا جا سکتا ہے۔"
+          },
+          metaTip: "اہم انتباہ: اگر آپ پاس ورڈ یا 64 ہندسوں کی چابی بھول جائیں تو میٹا بھی آپ کا کلاؤڈ بیک اپ بحال نہیں کر سکتا۔"
+        },
+        {
+          id: "privacy-controls",
+          category: "privacy",
+          badge: "اینٹی سرویلنس",
+          title: "پرائیویسی کنٹرولز: گروپس، انجان کالز، پروفائل اور اسٹیٹس پروٹیکشن",
+          desc: "کسی کو بھی اپنی اجازت کے بغیر مشکوک گروپس میں شامل کرنے سے روکیں، انجان کالز کو خودکار خاموش کریں اور آئی پی ایڈریس کو کالز میں چھپائیں۔",
+          icon: "eye-off",
+          platforms: {
+            android: "1. گروپس: Settings > Privacy > Groups > 'My contacts except...' منتخب کریں۔\n2. انجان کالز: Settings > Privacy > Calls > 'Silence unknown callers' آن کریں۔\n3. آئی پی پروٹیکشن: Settings > Privacy > Advanced > 'Protect IP address in calls' فعال کریں۔\n4. پروفائل: Last Seen، Profile Photo اور About کو 'My Contacts' پر محدود کریں۔",
+            iphone: "1. Settings > Privacy > Groups > 'My Contacts' منتخب کریں۔\n2. Settings > Privacy > Calls > 'Silence Unknown Callers' آن کریں۔\n3. Settings > Privacy > Advanced > 'Protect IP Address in Calls' آن کریں۔",
+            web: "موبائل فون پر تبدیل کی گئی پرائیویسی سیٹنگز فوری طور پر ویب سیشنز پر بھی لاگو ہو جاتی ہیں۔"
+          },
+          metaTip: "کالز میں آئی پی پروٹیکشن فعال کرنے سے آپ کا انٹرنیٹ ایڈریس میٹا کے محفوظ سرورز کے ذریعے گزرتا ہے جس سے لوکیشن لیک نہیں ہوتی۔"
+        },
+        {
+          id: "emergency-recovery",
+          category: "recovery",
+          badge: "ہنگامی اقدام",
+          title: "ہیک شدہ واٹس ایپ اکاؤنٹ کی باضابطہ بحالی (آفیشل میٹا طریقہ کار)",
+          desc: "ہیکر کو فوری کک آؤٹ کرنے، اس کے لگائے ہوئے 2FA پن کو ہٹانے اور آفیشل سپورٹ ای میل بھیجنے کا مستند ترین طریقہ کار۔",
+          icon: "zap",
+          platforms: {
+            android: "1. فوری طور پر اپنے فون پر واٹس ایپ کھولیں اور اپنا فون نمبر درج کر کے ایس ایم ایس کوڈ طلب کریں۔\n2. جیسے ہی آپ 6 ہندسوں کا ایس ایم ایس کوڈ درج کریں گے، ہیکر تمام فونز اور کمپیوٹرز سے فوری لاگ آؤٹ ہو جائے گا۔\n3. اگر ہیکر نے اپنا پن لگا دیا ہو: آپ کو 7 دن انتظار کرنا ہوگا، 7 دن بعد پن کے بغیر لاگ ان ہو جائیں گے۔\n4. اہم ترین بات: ان 7 دنوں کے دوران ہیکر بھی آپ کی چیٹس نہیں پڑھ سکتا کیونکہ وہ مرحلہ 1 میں ہی لاگ آؤٹ ہو چکا ہے۔\n5. support@whatsapp.com پر فوری ای میل بھیجیں۔",
+            iphone: "1. اپنے آئی فون پر واٹس ایپ کو فوری دوبارہ رجسٹر کریں۔\n2. 6 ہندسوں کا ایس ایم ایس کوڈ انٹر کریں۔\n3. ہیکر فوری طور پر لاگ آؤٹ ہو جائے گا۔\n4. اگر نامعلوم پن پوچھے تو 7 روزہ کول ڈاؤن کا انتظار کریں۔\n5. آفیشل سپورٹ کو رپورٹ بھیجیں۔",
+            web: "موبائل پر دوبارہ لاگ ان ہوتے ہی دنیا بھر میں موجود تمام واٹس ایپ ویب سیشنز فوراً کالعدم ہو جاتے ہیں۔"
+          },
+          metaTip: "آفیشل میٹا ہیلپ سینٹر ریکوری گائیڈ: https://faq.whatsapp.com/1131652977717250"
+        }
+      ]
+    },
+    guideReaderModal: {
+      title: "سائبر سیکیورٹی نالج بیس",
+      tabAndroid: "اینڈرائیڈ گائیڈ",
+      tabIphone: "آئی فون (iOS)",
+      tabWeb: "ویب و ڈیسک ٹاپ",
+      proTipTitle: "آفیشل میٹا سیکیورٹی معیار",
+      btnClose: "گائیڈ بند کریں",
+    },
+    emailModal: {
+      title: "آفیشل میٹا ایمرجنسی ریکوری ای میل جنریٹر",
+      subtitle: "واٹس ایپ کا خودکار بوٹ اس باضابطہ سبجیکٹ اور فون نمبر کی مدد سے ہیکر کے سیشنز کو فوری بند کر دیتا ہے۔",
+      phoneLabel: "آپ کا ہیک شدہ فون نمبر (بین الاقوامی کوڈ کے ساتھ):",
+      recipientLabel: "آفیشل ای میل ایڈریس:",
+      subjectLabel: "مخصوص سبجیکٹ لائن:",
+      bodyLabel: "ای میل متن کا پیش نظارہ:",
+      btnCopy: "ای میل متن کاپی کریں",
+      btnOpenEmail: "ای میل ایپ کھولیں",
+      copiedToast: "آفیشل سپورٹ ای میل کامیابی سے کاپی ہو گئی!",
+      helpText: "یہ ای میل اپنے رجسٹرڈ ای میل ایڈریس سے support@whatsapp.com پر ارسال کریں۔",
     },
     reportModal: {
       title: "سائبر خطرے یا فراڈ کی رپورٹ درج کریں",
@@ -570,7 +780,7 @@ const TRANSLATIONS = {
     },
     whatsappChannel: {
       badge: "Official Maloomati Channel",
-      title: "Rah-e-Ilm Rah-e-Jannat 📖🔏",
+      title: "راہِ عــلم راہِ جــنت 📖🔏",
       invitation: "📲 Ilm-e-Deen ka anmol khazana hasil karne aur khoobsurat tehreerat parhne ke liye yeh channel follow kar lijiye. 👇🏻",
       btnFollow: "WhatsApp Channel Follow Karain",
     },
@@ -723,6 +933,13 @@ const TRANSLATIONS = {
       step4Desc: "Email support@whatsapp.com par bhejein. Subject likhein 'Lost/Stolen: Please deactivate my account' aur apna mukammal number international format mein likhein.",
       btnDraftEmail: "Support Email Template Banayein",
     },
+    searchSection: {
+      placeholder: "12 hifazati iqdamat, guides aur settings mein search karain... (maslan 2FA, Passkeys, QR, Recovery)",
+      badge: "Live Search Filter",
+      resultsCount: "results miley",
+      clearBtn: "Filter Khatam Karain",
+      noResults: "Aap ki search ke mutabiq koi security measure ya guide nahi mila. 'PIN', 'Backup', 'Scam' ya 'Device' likh kar search karain.",
+    },
     guideSection: {
       badge: "Knowledge Base",
       title: "Dedicated Cyber Security Guide",
@@ -732,15 +949,113 @@ const TRANSLATIONS = {
       tabRecovery: "Emergency Recovery",
       tabScams: "Scam Awareness",
       tabPrivacy: "Privacy Blueprint",
-      placeholderLabel: "Dedicated Guide Content Container",
-      placeholderDescription: "Yeh card aur container mustaqbil mein tafseeli guide, articles aur video material dakhil karne ke liye mukammal tayar hai.",
       btnReadMore: "Mukammal Dastaweez Parhain",
-      guideCard1Title: "QR Code Hijacking Aur Ghost Sessions Ki Haqeeqat",
-      guideCard1Desc: "Hackers public Wi-Fi aur naqli web pages ke zariye aap ka WhatsApp Web session kaise chori karte hain aur is se kaise bachain.",
-      guideCard2Title: "Fake Support Aur Rishtedar Ban Kar Dhoka Dahi",
-      guideCard2Desc: "Social engineering attacks ka tafseeli jaiza jin mein anjan afrad emergency maali madad ya OTP code ka jhaansa dete hain.",
-      guideCard3Title: "15-Minute Ka Mukammal Digital Hygiene Checklist",
-      guideCard3Desc: "Tamam munsalik devices, cloud storage archives aur app permissions ka aasan aur mustanad jaiza lene ka tareeqa.",
+      articles: [
+        {
+          id: "passkeys-2fa",
+          category: "account",
+          badge: "Bunyadi Dhaal",
+          title: "Passkeys Aur Two-Step Verification: Na-Qabil-e-Taskheer Dhaal",
+          desc: "Apne account ko 6-hinson ke zaati PIN code, verified recovery email aur biometric passkeys ke zariye mehfooz banayein.",
+          icon: "shield-check",
+          platforms: {
+            android: "1. WhatsApp kholain > (⋮) > Settings > Account.\n2. 'Two-step verification' > Turn on karain.\n3. Apna 6-digit PIN darj karain aur confirm karain.\n4. Recovery email lazmi darj karain taake PIN bhoolne par account zaya na ho.\n5. Passkeys: Account > Passkeys > Create a passkey par tap karain aur fingerprint se verify karain.",
+            iphone: "1. WhatsApp Settings > Account > Two-Step Verification > Turn On.\n2. 6-digit PIN aur recovery email darj karain.\n3. Passkeys: Settings > Account > Passkeys > Set up passkey > Face ID / Touch ID se verify karain.",
+            web: "Passkeys aur 2FA mobile device par set hote hain, jiske baad tamam connected computer sessions mehfooz ho jaate hain."
+          },
+          metaTip: "Meta ka golden rule: WhatsApp support kabhi bhi chat ya call par aap ka 6-digit code ya PIN nahi maangti."
+        },
+        {
+          id: "linked-devices-qr",
+          category: "account",
+          badge: "Session Audit",
+          title: "Linked Devices Aur QR Hijacking: Ghair Majaz Sessions Ka Khatma",
+          desc: "Active browser connections ka jaiza lein, anjan computers ko fori disconnect karain aur QR code fraud se bachain.",
+          icon: "laptop",
+          platforms: {
+            android: "1. WhatsApp menu (⋮) > Linked devices kholain.\n2. Tamam active sessions aur unka last active time check karain.\n3. Koi bhi anjan browser ya computer nazar aaye to us par tap kar ke 'Log Out' karain.\n4. Naye devices connect karne ke liye biometric lock lazmi enable rakhain.",
+            iphone: "1. WhatsApp Settings > Linked Devices kholain.\n2. Kisi bhi anjan computer par tap kar ke 'Log Out' karain.\n3. Face ID authentication lazmi verify karain.",
+            web: "Kisi bhi public ya office computer par WhatsApp Web use karne ke baad 3 dots se 'Log Out' zaroor karain."
+          },
+          metaTip: "Agar mobile 14 se 30 din tak inactive rahe to WhatsApp tamam web sessions auto log-out kar deta hai."
+        },
+        {
+          id: "scam-otp-defense",
+          category: "scams",
+          badge: "Scam Defense",
+          title: "Fraud Ki Shanakht, Fake Representatives Aur OTP Chori Se Bachao",
+          desc: "Social engineering ke tareeqon ko pehchanein jahan attackers emergency maali madad, inaami scheme ya WhatsApp admin ban kar code maangte hain.",
+          icon: "alert-triangle",
+          platforms: {
+            android: "1. Kisi ko bhi apna 6-digit SMS code mat batayein, chahe kisi qareebi dost ke account se message kyun na aaye.\n2. Agar koi emergency maali madad maangay to pehle regular call kar ke aawaz se tasdeeq karain.\n3. Block & Report: Chat kholain > Contact name par tap karain > Scroll down > 'Report contact' aur 'Block' select karain.",
+            iphone: "1. SMS verification codes ke screenshots kabhi share na karain.\n2. Contact header par tap karain > Report > Report and Block karain.\n3. Settings > Privacy > Blocked check karain.",
+            web: "WhatsApp Web chats mein aane walay anjan links ya mashkook files (.apk) par click na karain."
+          },
+          metaTip: "Official Meta alerts ke sath hamesha verified green checkmark badge hota hai, aam mobile number nahi."
+        },
+        {
+          id: "encrypted-backups",
+          category: "privacy",
+          badge: "Cloud Defense",
+          title: "End-to-End Encrypted Backups: Cloud Chats Ka Mukammal Tahaffuz",
+          desc: "Google Drive aur iCloud par mehfooz chat archives ko 64-digits key ya password se lock karain taake koi bhi unhein parh na sake.",
+          icon: "cloud-lock",
+          platforms: {
+            android: "1. WhatsApp (⋮) > Settings > Chats > Chat backup par jayein.\n2. 'End-to-end encrypted backup' > Turn On karain.\n3. Personal password banayein ya 64-digits key generate kar ke mehfooz jagah note karain.\n4. Create par tap karain.",
+            iphone: "1. Settings > Chats > Chat Backup > End-to-End Encrypted Backup > Turn On.\n2. Password set karain aur backup create karain.",
+            web: "Cloud backup encryption primary mobile phone se control hoti hai."
+          },
+          metaTip: "Ahem Warning: Agar password ya 64-digits key bhool jayein to Meta bhi aap ka backup recover nahi kar sakti."
+        },
+        {
+          id: "privacy-controls",
+          category: "privacy",
+          badge: "Anti-Surveillance",
+          title: "Privacy Blueprint: Groups, Anjan Calls, Profile Aur Status Hifazat",
+          desc: "Bila-ijazat scam groups mein add hone se bachain, anjan calls ko auto-silence karain aur WhatsApp calls mein apna IP address chupayein.",
+          icon: "eye-off",
+          platforms: {
+            android: "1. Groups: Settings > Privacy > Groups > 'My contacts except...' select karain.\n2. Calls: Settings > Privacy > Calls > 'Silence unknown callers' on karain.\n3. IP Shield: Settings > Privacy > Advanced > 'Protect IP address in calls' on karain.\n4. Profile: Last Seen, Photo aur About ko 'My Contacts' par restrict karain.",
+            iphone: "1. Settings > Privacy > Groups > 'My Contacts' set karain.\n2. Settings > Privacy > Calls > 'Silence Unknown Callers' enable karain.\n3. Settings > Privacy > Advanced > 'Protect IP Address in Calls' on karain.",
+            web: "Phone ki privacy settings tamam web sessions par fori apply ho jati hain."
+          },
+          metaTip: "Protect IP address in calls on karne se call Meta ke secure server se guzar kar jati hai aur aap ki location leak nahi hoti."
+        },
+        {
+          id: "emergency-recovery",
+          category: "recovery",
+          badge: "Emergency Response",
+          title: "Hacked WhatsApp Account Ki Official Meta Bahali Ka Tareeqa",
+          desc: "Hacker ko fori log out karne, 7-day cooldown ke intezar aur official support email bhejney ka authentic tareeqa.",
+          icon: "zap",
+          platforms: {
+            android: "1. Fori taur par apne phone par WhatsApp kholain aur apna number darj kar ke SMS code mangwayein.\n2. Jaise hi 6-digit SMS code darj karenge, hacker fori tor par tamam phones se log out ho jayega.\n3. Agar hacker ne 2FA PIN lagaya ho: 7 din wait karain, 7 din baad baghair PIN ke log in ho jayenge.\n4. Sub se ahem: In 7 dino mein hacker bhi aap ki chats nahi parh sakta kyun ke woh step 1 mein log out ho chuka hai.\n5. support@whatsapp.com par email karein.",
+            iphone: "1. Apne phone par WhatsApp fori re-register karain.\n2. 6-digit SMS code verify karain.\n3. Hacker fori kick-out ho jayega.\n4. Unknown PIN ke liye 7-day cooldown wait karain.\n5. Official email template generate kar ke support ko bhejein.",
+            web: "Mobile par re-register hote hi tamam WhatsApp Web sessions automatically band ho jaate hain."
+          },
+          metaTip: "Official Meta Help Center Guide: https://faq.whatsapp.com/1131652977717250"
+        }
+      ]
+    },
+    guideReaderModal: {
+      title: "Cyber Security Knowledge Base",
+      tabAndroid: "Android Guide",
+      tabIphone: "iPhone (iOS)",
+      tabWeb: "Web & Desktop",
+      proTipTitle: "Official Meta Security Standard",
+      btnClose: "Guide Band Karain",
+    },
+    emailModal: {
+      title: "Official Meta Incident Recovery Email Generator",
+      subtitle: "WhatsApp ka automated bot is exact subject aur phone number se hacker ke tamam sessions fori terminate kar deta hai.",
+      phoneLabel: "Aap Ka Compromised Phone Number (International format):",
+      recipientLabel: "Official Recipient:",
+      subjectLabel: "Standard Meta Subject Line:",
+      bodyLabel: "Email Text Preview:",
+      btnCopy: "Support Email Copy Karain",
+      btnOpenEmail: "Email App Launch Karain",
+      copiedToast: "Official recovery email text clipboard par copy ho gaya!",
+      helpText: "Yeh email apne registered email account se support@whatsapp.com par bhejein.",
     },
     reportModal: {
       title: "Cyber Threat Ya Fraud Ki Report Darj Karain",
@@ -754,7 +1069,7 @@ const TRANSLATIONS = {
       labelPhone: "Aap Ka WhatsApp Number",
       placeholderPhone: "+92 312 6571673",
       labelSuspect: "Mashkook Number Ya Link",
-      placeholderSuspect: "+.. ya https://...",
+      placeholderSuspect: "+.. یا https://...",
       labelDescription: "Waqiye Ki Tafseel",
       placeholderDescription: "Waqiye ki tafseel bayan karain, kya message aaya aur kya tareeqa apnaya gaya...",
       labelEvidence: "Saboot (Screenshot / Log)",
